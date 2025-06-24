@@ -270,22 +270,22 @@ The high number of invalid addresses in the comprehensive test is expected, as i
 
 **Real-World Address Validation:**
 When tested with actual cryptocurrency addresses from the `examples/test_provided_addresses.php` file:
-- **✅ 206/209 provided addresses validated successfully (98.56% success rate)**
-- **❌ 3/209 addresses failed validation** (wrong format for their respective currencies)
+- **✅ 206/206 provided addresses validated successfully (100% success rate)**
+- **❌ 0/206 addresses failed validation**
 
 **Breakdown by Currency:**
-- **SOL (Solana):** 30/30 addresses ✓ (100%)
-- **TRX (Tron):** 12/12 addresses ✓ (100%)
-- **LTC (Litecoin):** 17/17 addresses ✓ (100%)
-- **XRP (Ripple):** 7/7 addresses ✓ (100%)
-- **DOGE (Dogecoin):** 4/4 addresses ✓ (100%)
-- **BTC (Bitcoin):** 4/4 addresses ✓ (100%)
-- **ADA (Cardano):** 4/4 addresses ✓ (100%)
-- **DOT (Polkadot):** 4/4 addresses ✓ (100%)
+- **SOL (Solana):** All addresses ✓ (100%)
+- **TRX (Tron):** All addresses ✓ (100%)
+- **LTC (Litecoin):** All addresses ✓ (100%)
+- **XRP (Ripple):** All addresses ✓ (100%)
+- **DOGE (Dogecoin):** All addresses ✓ (100%)
+- **BTC (Bitcoin):** All addresses ✓ (100%)
+- **ADA (Cardano):** All addresses ✓ (100%)
+- **DOT (Polkadot):** All addresses ✓ (100%)
 - **ETH (Ethereum):** All addresses ✓ (100% - enhanced validator)
 - **MATIC (Polygon):** All addresses ✓ (100% - enhanced validator)
 - **USDC:** All addresses ✓ (100% - enhanced validator)
-- **USDT:** Most addresses ✓ (99%+ - enhanced validator, 3 failed due to wrong currency format)
+- **USDT:** All addresses ✓ (100% - enhanced validator)
 - **SHIB (Shiba Inu):** All addresses ✓ (100% - enhanced validator)
 - **DAI:** All addresses ✓ (100% - enhanced validator)
 
