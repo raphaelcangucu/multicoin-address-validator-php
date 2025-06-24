@@ -223,6 +223,7 @@ $providedAddresses = [
     ['currency' => 'BTC', 'address' => '3BCKtw6H5xLvkhD1LFH4TjDnCaJz6kEbGv'],
     ['currency' => 'BTC', 'address' => 'bc1qx4e9uxqk8l336cuctr6fylsvha3a5hxsp0yxjycu7m8q30e9f95qa97t9a'],
     ['currency' => 'LTC', 'address' => 'MV3Bhs217U8CrCreYTQLqC38LS2cFBmbu5'],
+    ['currency' => 'DOGE', 'address' => 'npJo8FieqEmB1NehU4jFFEFPsdvy8ippbm'],
 ];
 
 echo "Testing provided cryptocurrency addresses...\n";

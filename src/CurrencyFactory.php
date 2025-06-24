@@ -100,7 +100,7 @@ class CurrencyFactory
                 'symbol' => 'doge',
                 'validatorClass' => DogecoinValidator::class,
                 'config' => [
-                    'addressTypes' => ['prod' => ['1e', '16'], 'testnet' => ['71', 'c4']],
+                    'addressTypes' => ['prod' => ['1e', '16', '71'], 'testnet' => ['71', 'c4']],
                 ]
             ],
 
