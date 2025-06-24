@@ -18,7 +18,7 @@ A PHP library for validating cryptocurrency wallet addresses across multiple cry
 Install via Composer:
 
 ```bash
-composer require multicoin/address-validator
+composer require raphaelcangucu/multicoin-address-validator
 ```
 
 ## Quick Start
