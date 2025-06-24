@@ -23,8 +23,8 @@ class BitcoinValidator extends AbstractValidator
             return false;
         }
 
-        return $this->isValidP2PKHOrP2SH($address, $options) || 
-               $this->isValidSegwit($address, $options);
+        return $this->isValidP2PKHOrP2SH($address, $options) ||
+            $this->isValidSegwit($address, $options);
     }
 
     /**
@@ -38,13 +38,13 @@ class BitcoinValidator extends AbstractValidator
     {
         $networkType = $this->getNetworkType($options);
         $addressTypes = $this->getAddressTypes($networkType);
-        
+
         if (empty($addressTypes)) {
             return false;
         }
 
         $addressType = $this->getAddressType($address, $options);
-        
+
         return $addressType !== null && in_array($addressType, $addressTypes, true);
     }
 
@@ -59,7 +59,7 @@ class BitcoinValidator extends AbstractValidator
     {
         $networkType = $this->getNetworkType($options);
         $bech32Hrp = $this->getBech32Hrp($networkType);
-        
+
         if (empty($bech32Hrp)) {
             return false;
         }
@@ -105,36 +105,6 @@ class BitcoinValidator extends AbstractValidator
     }
 
     /**
-     * Calculate checksum based on hash function
-     *
-     * @param string $hashFunction
-     * @param string $payload
-     * @return string
-     */
-    private function getChecksum(string $hashFunction, string $payload): string
-    {
-        return match ($hashFunction) {
-            'blake256keccak256' => $this->getBlakeKeccakChecksum($payload),
-            'blake256' => CryptoUtils::blake256Checksum($payload),
-            'keccak256' => CryptoUtils::keccak256Checksum($payload),
-            'sha256' => CryptoUtils::sha256Checksum($payload),
-            default => CryptoUtils::sha256Checksum($payload),
-        };
-    }
-
-    /**
-     * Get Blake-Keccak combined checksum
-     *
-     * @param string $payload
-     * @return string
-     */
-    private function getBlakeKeccakChecksum(string $payload): string
-    {
-        $blake = CryptoUtils::blake2b256($payload);
-        return CryptoUtils::keccak256Checksum($blake);
-    }
-
-    /**
      * Get address types for network
      *
      * @param string $networkType
@@ -143,15 +113,15 @@ class BitcoinValidator extends AbstractValidator
     private function getAddressTypes(string $networkType): array
     {
         $addressTypes = $this->getConfig('addressTypes', []);
-        
+
         if (isset($addressTypes[$networkType])) {
             return $addressTypes[$networkType];
         }
-        
+
         if ($networkType === 'prod' || $networkType === 'testnet') {
             return [];
         }
-        
+
         // Return combined prod and testnet if network type is not specific
         return array_merge(
             $addressTypes['prod'] ?? [],
@@ -168,11 +138,11 @@ class BitcoinValidator extends AbstractValidator
     private function getBech32Hrp(string $networkType): array
     {
         $bech32Hrp = $this->getConfig('bech32Hrp', []);
-        
+
         if (isset($bech32Hrp[$networkType])) {
             return $bech32Hrp[$networkType];
         }
-        
+
         return [];
     }
 }
