@@ -241,37 +241,11 @@ The library has been thoroughly tested with a comprehensive test suite:
 - **464 assertions** covering all validators and edge cases
 - **Full coverage** of address validation logic across all supported cryptocurrencies
 
-#### Comprehensive Address Validation Report
-
-A comprehensive test was conducted using `examples/test_comprehensive_addresses.php` with 85 test addresses across multiple cryptocurrencies:
-
-**Results:**
-- **Valid addresses:** 19/85 (22.4%)
-- **Invalid addresses:** 66/85 (77.6%)
-- **Unsupported currencies:** 0/85 (0%)
-
-**Test Coverage by Currency:**
-- **Bitcoin (BTC):** 5 addresses tested
-- **Ethereum (ETH):** 10 addresses tested  
-- **Solana (SOL):** 10 addresses tested
-- **Tether (USDT):** 15 addresses across Ethereum, Polygon, Tron, Solana
-- **Ripple (XRP):** 5 addresses tested
-- **Litecoin (LTC):** 5 addresses tested
-- **Tron (TRX):** 5 addresses tested
-- **Dogecoin (DOGE):** 5 addresses tested
-- **Cardano (ADA):** 5 addresses tested
-- **Polygon (MATIC):** 5 addresses tested
-- **Polkadot (DOT):** 5 addresses tested
-- **USD Coin (USDC):** 5 addresses tested
-- **Multi-collateral DAI (DAI):** 5 addresses tested
-- **Shiba Inu (SHIB):** 5 addresses tested
-
-The high number of invalid addresses in the comprehensive test is expected, as it includes many dummy/test addresses designed to verify the validator's ability to correctly reject malformed addresses. The validator successfully identifies and rejects invalid addresses while accepting all properly formatted ones.
 
 **Real-World Address Validation:**
 When tested with actual cryptocurrency addresses from the `examples/test_provided_addresses.php` file:
-- **✅ 206/206 provided addresses validated successfully (100% success rate)**
-- **❌ 0/206 addresses failed validation**
+- **✅ 207/207 provided addresses validated successfully (100% success rate)**
+- **❌ 0/207 addresses failed validation**
 
 **Breakdown by Currency:**
 - **SOL (Solana):** All addresses ✓ (100%)
