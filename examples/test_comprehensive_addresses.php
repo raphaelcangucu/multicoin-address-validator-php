@@ -68,6 +68,13 @@ $comprehensiveAddresses = [
     ['currency' => 'DOT', 'address' => '14E5nqKAp3oAJcmzgZhUD2RcptBeUBScxKHgJKU4HPNcKVf3'], // SS58 format
     ['currency' => 'DOT', 'address' => '12xtAYsRUrmbniiWQqJtECiBQrMn8AypQcXhnQAc6RB6XkLW'], // SS58 format
 
+    // TON (The Open Network) - User-friendly and raw format addresses
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF'], // Bounceable mainnet
+    ['currency' => 'TON', 'address' => 'UQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPuwA'], // Non-bounceable mainnet
+    ['currency' => 'TON', 'address' => '0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e'], // Raw format mainnet
+    ['currency' => 'TON', 'address' => 'kQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPgpP', 'options' => ['networkType' => 'testnet']], // Testnet bounceable
+    ['currency' => 'TON', 'address' => 'EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c'], // Zero address
+
     // ERC-20 & Ethereum-Compatible Tokens
 
     // USD Coin (USDC) - Ethereum-based stablecoin

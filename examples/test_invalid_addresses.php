@@ -76,6 +76,16 @@ $invalidAddresses = [
     ['currency' => 'DOT', 'address' => '06ZL8yLyXv3V3L3z9ofR1ovFLziyXaN1DPq4yffMAZ9czzBD', 'reason' => 'Invalid character (0)'],
     ['currency' => 'DOT', 'address' => '16ZL8yLyXv3V3L3z9ofR1ovFLziyXaN1DPq4yffMAZ9czzBDEXTRA', 'reason' => 'Too long'],
 
+    // TON (The Open Network) invalid addresses
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqP', 'reason' => 'Too short (47 chars)'],
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHFX', 'reason' => 'Too long (51 chars)'],
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqP#HF', 'reason' => 'Invalid character (#)'],
+    ['currency' => 'TON', 'address' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'reason' => 'Invalid base64'],
+    ['currency' => 'TON', 'address' => '2:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e', 'reason' => 'Invalid workchain (2)'],
+    ['currency' => 'TON', 'address' => '0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3g', 'reason' => 'Invalid hex character (g)'],
+    ['currency' => 'TON', 'address' => 'ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e', 'reason' => 'Missing workchain prefix'],
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHG', 'reason' => 'Invalid CRC checksum'],
+
     // Dogecoin (DOGE) invalid addresses
     ['currency' => 'DOGE', 'address' => 'DH5yaieqoZN36fDVciNyRueRGvGLR3m', 'reason' => 'Too short'],
     ['currency' => 'DOGE', 'address' => 'AH5yaieqoZN36fDVciNyRueRGvGLR3mr7L', 'reason' => 'Invalid version byte (A)'],
@@ -88,6 +98,9 @@ $invalidAddresses = [
     ['currency' => 'SOL', 'address' => 'rUocf1ixiK2kEHjw9KDvZUWaEUFUkm3d7', 'reason' => 'Ripple address as Solana'],
     ['currency' => 'XRP', 'address' => 'HN7cABqLq46Es1jh92dQQi5kHMKvH4EeMEJQo4AmwPPJ', 'reason' => 'Solana address as Ripple'],
     ['currency' => 'LTC', 'address' => 'TLyqzVGLV1srkB7dToTAEqgDSfPtXRJZYH', 'reason' => 'Tron address as Litecoin'],
+    ['currency' => 'TON', 'address' => '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', 'reason' => 'Bitcoin address as TON'],
+    ['currency' => 'TON', 'address' => '0x742d35cc6339c4532ce58b5d3ea8d5a8d6f6395c', 'reason' => 'Ethereum address as TON'],
+    ['currency' => 'BTC', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF', 'reason' => 'TON address as Bitcoin'],
 
     // ERC-20 tokens with Bitcoin addresses
     ['currency' => 'USDT', 'address' => '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', 'reason' => 'Bitcoin address for USDT'],
