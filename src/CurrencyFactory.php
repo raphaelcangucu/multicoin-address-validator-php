@@ -16,6 +16,7 @@ use Multicoin\AddressValidator\Validators\PolkadotValidator;
 use Multicoin\AddressValidator\Validators\RippleValidator;
 use Multicoin\AddressValidator\Validators\SolanaValidator;
 use Multicoin\AddressValidator\Validators\TronValidator;
+use Multicoin\AddressValidator\Validators\TonValidator;
 
 /**
  * Factory for creating and registering currencies
@@ -215,6 +216,12 @@ class CurrencyFactory
                 'name' => 'Polkadot',
                 'symbol' => 'dot',
                 'validatorClass' => PolkadotValidator::class,
+                'config' => []
+            ],
+            [
+                'name' => 'TON',
+                'symbol' => 'ton',
+                'validatorClass' => TonValidator::class,
                 'config' => []
             ],
 

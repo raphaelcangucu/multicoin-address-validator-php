@@ -52,11 +52,19 @@ $isValid = $validator->validate(
     ['networkType' => 'testnet']
 );
 echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
+
+// Validate TON address (user-friendly format)
+$isValid = $validator->validate('EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF', 'ton');
+echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
+
+// Validate TON address (raw format)
+$isValid = $validator->validate('0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e', 'ton');
+echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
 ```
 
 ## Supported Cryptocurrencies
 
-This library supports **25+ cryptocurrencies** across multiple blockchain networks, including major cryptocurrencies, ERC-20 tokens, and Bitcoin derivatives.
+This library supports **26+ cryptocurrencies** across multiple blockchain networks, including major cryptocurrencies, ERC-20 tokens, and Bitcoin derivatives.
 
 ### Major Cryptocurrencies
 - **Bitcoin (BTC)** - P2PKH, P2SH, Bech32 addresses (legacy, SegWit)
@@ -69,6 +77,7 @@ This library supports **25+ cryptocurrencies** across multiple blockchain networ
 - **Monero (XMR)** - CryptoNote addresses with network detection
 - **Tron (TRX)** - TRON addresses with version byte validation
 - **Polkadot (DOT)** - SS58 address format with Blake2b checksum
+- **TON (The Open Network)** - User-friendly and raw format addresses with CRC16 validation
 
 ### ERC-20 & Ethereum-Compatible Tokens
 - **USD Coin (USDC)** - Ethereum-based stablecoin
@@ -105,8 +114,9 @@ Each cryptocurrency supports multiple networks where applicable:
 - **Base58Check** - Bitcoin derivatives with checksum
 - **Bech32** - Bitcoin SegWit, Litecoin SegWit, Cardano
 - **CashAddr** - Bitcoin Cash specific format
-- **Hex with EIP-55** - Ethereum and ERC-20 tokens
+- **Hex with EIP-55** - Ethereum and ERC-20 tokens  
 - **SS58** - Polkadot ecosystem addresses
+- **Base64/Base64URL** - TON blockchain with CRC16 checksum
 
 ## API Reference
 
