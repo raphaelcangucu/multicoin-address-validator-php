@@ -65,13 +65,26 @@ class TonValidator extends AbstractValidator
             return false;
         }
 
+        // Extract core address from query parameters (e.g., ?memoId=123)
+        $coreAddress = $this->extractCoreAddress($address);
+
         // Check if it's raw format (workchain:address)
-        if ($this->isRawFormat($address)) {
-            return $this->validateRawAddress($address);
+        if ($this->isRawFormat($coreAddress)) {
+            return $this->validateRawAddress($coreAddress);
         }
 
         // Check if it's user-friendly format
-        return $this->validateUserFriendlyAddress($address, $options);
+        return $this->validateUserFriendlyAddress($coreAddress, $options);
+    }
+
+    /**
+     * Extract core address from full address with potential memo parameters
+     */
+    private function extractCoreAddress(string $address): string
+    {
+        // Split by '?' to separate address from query parameters (e.g., ?memoId=123)
+        $parts = explode('?', $address, 2);
+        return $parts[0];
     }
 
     /**

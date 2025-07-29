@@ -60,6 +60,10 @@ echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
 // Validate TON address (raw format)
 $isValid = $validator->validate('0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e', 'ton');
 echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
+
+// Validate TON address with memo parameters
+$isValid = $validator->validate('UQBdge-bG6qCcUnkCJqJXk6xsiWToG92UyGw-CBicT-eV0U3?memoId=123', 'ton');
+echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
 ```
 
 ## Supported Cryptocurrencies
@@ -77,7 +81,7 @@ This library supports **26+ cryptocurrencies** across multiple blockchain networ
 - **Monero (XMR)** - CryptoNote addresses with network detection
 - **Tron (TRX)** - TRON addresses with version byte validation
 - **Polkadot (DOT)** - SS58 address format with Blake2b checksum
-- **TON (The Open Network)** - User-friendly and raw format addresses with CRC16 validation
+- **TON (The Open Network)** - User-friendly and raw format addresses with CRC16 validation, memo parameter support
 
 ### ERC-20 & Ethereum-Compatible Tokens
 - **USD Coin (USDC)** - Ethereum-based stablecoin
@@ -148,6 +152,9 @@ $validator->validate(
 
 // Using currency name instead of symbol
 $validator->validate('1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', 'bitcoin');
+
+// TON address with memo parameters (supported)
+$validator->validate('UQBdge-bG6qCcUnkCJqJXk6xsiWToG92UyGw-CBicT-eV0U3?memoId=123', 'ton');
 ```
 
 #### `getCurrencies(): array`

@@ -74,6 +74,8 @@ $comprehensiveAddresses = [
     ['currency' => 'TON', 'address' => '0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e'], // Raw format mainnet
     ['currency' => 'TON', 'address' => 'kQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPgpP', 'options' => ['networkType' => 'testnet']], // Testnet bounceable
     ['currency' => 'TON', 'address' => 'EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c'], // Zero address
+    ['currency' => 'TON', 'address' => 'UQBdge-bG6qCcUnkCJqJXk6xsiWToG92UyGw-CBicT-eV0U3?memoId=0'], // Address with memo
+    ['currency' => 'TON', 'address' => 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF?memo=payment123'], // Address with memo text
 
     // ERC-20 & Ethereum-Compatible Tokens
 

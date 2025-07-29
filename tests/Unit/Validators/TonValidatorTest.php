@@ -222,4 +222,64 @@ class TonValidatorTest extends TestCase
         $this->assertFalse($this->validator->isValidAddress($lowercaseAddress));
         $this->assertFalse($this->validator->isValidAddress($uppercaseAddress));
     }
+
+    public function testTonAddressesWithMemoParameters(): void
+    {
+        $addressesWithMemo = [
+            // User-friendly addresses with various memo formats
+            'UQBdge-bG6qCcUnkCJqJXk6xsiWToG92UyGw-CBicT-eV0U3?memoId=0',
+            'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF?memo=test123',
+            'UQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPuwA?tag=987654321',
+            'EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c?memoId=42',
+            
+            // Multiple parameters
+            'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF?memoId=123&comment=payment',
+            
+            // Raw format with memo
+            '0:ca6e321c7cce9ecedf0a8ca2492ec8592494aa5fb5ce0387dff96ef6af982a3e?memoId=456',
+            '-1:3333333333333333333333333333333333333333333333333333333333333333?memo=masterchain',
+        ];
+
+        foreach ($addressesWithMemo as $address) {
+            $this->assertTrue(
+                $this->validator->isValidAddress($address),
+                "Address with memo {$address} should be valid"
+            );
+        }
+    }
+
+    public function testTonTestnetAddressesWithMemo(): void
+    {
+        $testnetAddressesWithMemo = [
+            'kQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPgpP?memoId=testnet123',
+            '0QDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPleK?memo=testnet',
+        ];
+
+        foreach ($testnetAddressesWithMemo as $address) {
+            $this->assertTrue(
+                $this->validator->isValidAddress($address, ['networkType' => 'testnet']),
+                "Testnet address with memo {$address} should be valid for testnet"
+            );
+            
+            $this->assertFalse(
+                $this->validator->isValidAddress($address, ['networkType' => 'prod']),
+                "Testnet address with memo {$address} should be invalid for mainnet"
+            );
+        }
+    }
+
+    public function testMemoParameterExtraction(): void
+    {
+        // Test that the core address validation still works correctly
+        $addressWithMemo = 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF?memoId=123';
+        $addressWithoutMemo = 'EQDKbjIcfM6ezt8KjKJJLshZJJSqX7XOA4ff-W72r5gqPrHF';
+        
+        // Both should be valid - the validator should extract the core address
+        $this->assertTrue($this->validator->isValidAddress($addressWithMemo));
+        $this->assertTrue($this->validator->isValidAddress($addressWithoutMemo));
+        
+        // Test with invalid core address but valid memo format
+        $invalidAddressWithMemo = 'InvalidTonAddress123?memoId=123';
+        $this->assertFalse($this->validator->isValidAddress($invalidAddressWithMemo));
+    }
 }
