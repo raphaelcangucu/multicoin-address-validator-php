@@ -350,6 +350,186 @@ class AllCoinsValidationTest extends TestCase
     }
 
     /**
+     * Test TRUMP addresses (Solana-based)
+     */
+    public function testTrumpAddresses(): void
+    {
+        $validAddresses = [
+            '11111111111111111111111111111111',
+            'SysvarC1ock11111111111111111111111111111111',
+            'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',
+            'So11111111111111111111111111111111111111112',
+            'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+        ];
+
+        $invalidAddresses = [
+            '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', // Bitcoin
+            '0x742d35Cc6339C4532CE58b5D3Ea8d5A8d6F6395C', // Ethereum
+            '111111111111111111111111111111111111111111111', // Too long
+            'SysvarC1ock1111111111111111111111111111111O', // Invalid Base58
+            ''
+        ];
+
+        foreach ($validAddresses as $address) {
+            $this->assertTrue(
+                $this->validator->validate($address, 'trump'),
+                "TRUMP address {$address} should be valid"
+            );
+        }
+
+        foreach ($invalidAddresses as $address) {
+            $this->assertFalse(
+                $this->validator->validate($address, 'trump'),
+                "TRUMP address {$address} should be invalid"
+            );
+        }
+    }
+
+    /**
+     * Test PENGU addresses (Solana-based)
+     */
+    public function testPenguAddresses(): void
+    {
+        $validAddresses = [
+            '11111111111111111111111111111111',
+            'SysvarC1ock11111111111111111111111111111111',
+            'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',
+            'So11111111111111111111111111111111111111112',
+            'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+        ];
+
+        $invalidAddresses = [
+            '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', // Bitcoin
+            '0x742d35Cc6339C4532CE58b5D3Ea8d5A8d6F6395C', // Ethereum
+            '111111111111111111111111111111111111111111111', // Too long
+            'SysvarC1ock1111111111111111111111111111111O', // Invalid Base58
+            ''
+        ];
+
+        foreach ($validAddresses as $address) {
+            $this->assertTrue(
+                $this->validator->validate($address, 'pengu'),
+                "PENGU address {$address} should be valid"
+            );
+        }
+
+        foreach ($invalidAddresses as $address) {
+            $this->assertFalse(
+                $this->validator->validate($address, 'pengu'),
+                "PENGU address {$address} should be invalid"
+            );
+        }
+    }
+
+    /**
+     * Test BONK addresses (Solana-based)
+     */
+    public function testBonkAddresses(): void
+    {
+        $validAddresses = [
+            '11111111111111111111111111111111',
+            'SysvarC1ock11111111111111111111111111111111',
+            'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',
+            'So11111111111111111111111111111111111111112',
+            'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+        ];
+
+        $invalidAddresses = [
+            '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', // Bitcoin
+            '0x742d35Cc6339C4532CE58b5D3Ea8d5A8d6F6395C', // Ethereum
+            '111111111111111111111111111111111111111111111', // Too long
+            'SysvarC1ock1111111111111111111111111111111O', // Invalid Base58
+            ''
+        ];
+
+        foreach ($validAddresses as $address) {
+            $this->assertTrue(
+                $this->validator->validate($address, 'bonk'),
+                "BONK address {$address} should be valid"
+            );
+        }
+
+        foreach ($invalidAddresses as $address) {
+            $this->assertFalse(
+                $this->validator->validate($address, 'bonk'),
+                "BONK address {$address} should be invalid"
+            );
+        }
+    }
+
+    /**
+     * Test JUP (Jupiter) addresses (Solana-based)
+     */
+    public function testJupiterAddresses(): void
+    {
+        $validAddresses = [
+            '11111111111111111111111111111111',
+            'SysvarC1ock11111111111111111111111111111111',
+            'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',
+            'So11111111111111111111111111111111111111112',
+            'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+        ];
+
+        $invalidAddresses = [
+            '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', // Bitcoin
+            '0x742d35Cc6339C4532CE58b5D3Ea8d5A8d6F6395C', // Ethereum
+            '111111111111111111111111111111111111111111111', // Too long
+            'SysvarC1ock1111111111111111111111111111111O', // Invalid Base58
+            ''
+        ];
+
+        foreach ($validAddresses as $address) {
+            $this->assertTrue(
+                $this->validator->validate($address, 'jup'),
+                "JUP address {$address} should be valid"
+            );
+        }
+
+        foreach ($invalidAddresses as $address) {
+            $this->assertFalse(
+                $this->validator->validate($address, 'jup'),
+                "JUP address {$address} should be invalid"
+            );
+        }
+    }
+
+    /**
+     * Test PUMP addresses (Solana-based)
+     */
+    public function testPumpAddresses(): void
+    {
+        $validAddresses = [
+            '11111111111111111111111111111111',
+            'SysvarC1ock11111111111111111111111111111111',
+            'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA',
+            'So11111111111111111111111111111111111111112',
+            'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+        ];
+
+        $invalidAddresses = [
+            '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', // Bitcoin
+            '0x742d35Cc6339C4532CE58b5D3Ea8d5A8d6F6395C', // Ethereum
+            '111111111111111111111111111111111111111111111', // Too long
+            'SysvarC1ock1111111111111111111111111111111O', // Invalid Base58
+            ''
+        ];
+
+        foreach ($validAddresses as $address) {
+            $this->assertTrue(
+                $this->validator->validate($address, 'pump'),
+                "PUMP address {$address} should be valid"
+            );
+        }
+
+        foreach ($invalidAddresses as $address) {
+            $this->assertFalse(
+                $this->validator->validate($address, 'pump'),
+                "PUMP address {$address} should be invalid"
+            );
+        }
+    }
+
+    /**
      * Test TRX (Tron) addresses
      */
     public function testTronAddresses(): void
@@ -572,7 +752,7 @@ class AllCoinsValidationTest extends TestCase
      */
     public function testAllCurrenciesSupported(): void
     {
-        $requiredCurrencies = ['ada', 'btc', 'dai', 'doge', 'dot', 'eth', 'ltc', 'matic', 'sol', 'trx', 'usdc', 'usdt', 'xrp', 'shib'];
+        $requiredCurrencies = ['ada', 'btc', 'dai', 'doge', 'dot', 'eth', 'ltc', 'matic', 'sol', 'trx', 'usdc', 'usdt', 'xrp', 'shib', 'trump', 'pengu', 'bonk', 'jup', 'pump'];
         
         foreach ($requiredCurrencies as $currency) {
             $this->assertTrue(

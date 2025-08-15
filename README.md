@@ -68,7 +68,7 @@ echo $isValid ? 'Valid' : 'Invalid'; // Output: Valid
 
 ## Supported Cryptocurrencies
 
-This library supports **26+ cryptocurrencies** across multiple blockchain networks, including major cryptocurrencies, ERC-20 tokens, and Bitcoin derivatives.
+This library supports **31+ cryptocurrencies** across multiple blockchain networks, including major cryptocurrencies, ERC-20 tokens, Solana-based tokens, and Bitcoin derivatives.
 
 ### Major Cryptocurrencies
 - **Bitcoin (BTC)** - P2PKH, P2SH, Bech32 addresses (legacy, SegWit)
@@ -82,6 +82,13 @@ This library supports **26+ cryptocurrencies** across multiple blockchain networ
 - **Tron (TRX)** - TRON addresses with version byte validation
 - **Polkadot (DOT)** - SS58 address format with Blake2b checksum
 - **TON (The Open Network)** - User-friendly and raw format addresses with CRC16 validation, memo parameter support
+
+### Solana-Based Tokens
+- **TRUMP** - Donald Trump-themed token on Solana
+- **PENGU** - Pudgy Penguins token on Solana 
+- **BONK** - Community-driven meme coin on Solana
+- **Jupiter (JUP)** - DEX aggregator token on Solana
+- **PUMP** - Pump.fun ecosystem token on Solana
 
 ### ERC-20 & Ethereum-Compatible Tokens
 - **USD Coin (USDC)** - Ethereum-based stablecoin
@@ -181,6 +188,8 @@ Checks if a currency is supported.
 
 ```php
 $isSupported = $validator->isSupported('btc'); // true
+$isSupported = $validator->isSupported('trump'); // true
+$isSupported = $validator->isSupported('bonk'); // true
 $isSupported = $validator->isSupported('unknown'); // false
 ```
 
@@ -279,6 +288,11 @@ The library includes three comprehensive test files demonstrating validation cap
 
 **Breakdown by Currency:**
 - **SOL (Solana):** All addresses ✓ (100%)
+- **TRUMP:** All addresses ✓ (100% - Solana-based)
+- **PENGU:** All addresses ✓ (100% - Solana-based)
+- **BONK:** All addresses ✓ (100% - Solana-based)
+- **JUP (Jupiter):** All addresses ✓ (100% - Solana-based)
+- **PUMP:** All addresses ✓ (100% - Solana-based)
 - **TRX (Tron):** All addresses ✓ (100%)
 - **LTC (Litecoin):** All addresses ✓ (100%)
 - **XRP (Ripple):** All addresses ✓ (100%)
@@ -294,7 +308,7 @@ The library includes three comprehensive test files demonstrating validation cap
 - **DAI:** All addresses ✓ (100% - enhanced validator)
 
 **Network Coverage:**
-The test suite validates addresses across **14 different cryptocurrencies** and multiple network types (mainnet, testnet, legacy formats, SegWit, Bech32, etc.), demonstrating comprehensive support for real-world cryptocurrency address formats.
+The test suite validates addresses across **19 different cryptocurrencies** and multiple network types (mainnet, testnet, legacy formats, SegWit, Bech32, etc.), demonstrating comprehensive support for real-world cryptocurrency address formats including the latest Solana-based tokens.
 
 **Enhanced Ethereum/ERC-20 Compatibility:**
 The library features a significantly enhanced EthereumValidator that provides industry-leading compatibility:

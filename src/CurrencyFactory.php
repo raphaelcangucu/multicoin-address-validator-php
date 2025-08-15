@@ -198,6 +198,51 @@ class CurrencyFactory
                 ]
             ],
             [
+                'name' => 'TRUMP',
+                'symbol' => 'trump',
+                'validatorClass' => SolanaValidator::class,
+                'config' => [
+                    'maxLength' => SolanaValidator::MAX_LENGTH,
+                    'minLength' => SolanaValidator::MIN_LENGTH,
+                ]
+            ],
+            [
+                'name' => 'PENGU',
+                'symbol' => 'pengu',
+                'validatorClass' => SolanaValidator::class,
+                'config' => [
+                    'maxLength' => SolanaValidator::MAX_LENGTH,
+                    'minLength' => SolanaValidator::MIN_LENGTH,
+                ]
+            ],
+            [
+                'name' => 'BONK',
+                'symbol' => 'bonk',
+                'validatorClass' => SolanaValidator::class,
+                'config' => [
+                    'maxLength' => SolanaValidator::MAX_LENGTH,
+                    'minLength' => SolanaValidator::MIN_LENGTH,
+                ]
+            ],
+            [
+                'name' => 'Jupiter',
+                'symbol' => 'jup',
+                'validatorClass' => SolanaValidator::class,
+                'config' => [
+                    'maxLength' => SolanaValidator::MAX_LENGTH,
+                    'minLength' => SolanaValidator::MIN_LENGTH,
+                ]
+            ],
+            [
+                'name' => 'PUMP',
+                'symbol' => 'pump',
+                'validatorClass' => SolanaValidator::class,
+                'config' => [
+                    'maxLength' => SolanaValidator::MAX_LENGTH,
+                    'minLength' => SolanaValidator::MIN_LENGTH,
+                ]
+            ],
+            [
                 'name' => 'Monero',
                 'symbol' => 'xmr',
                 'validatorClass' => MoneroValidator::class,
