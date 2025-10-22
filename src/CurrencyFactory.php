@@ -131,6 +131,12 @@ class CurrencyFactory
                 'config' => []
             ],
             [
+                'name' => 'Polygon',
+                'symbol' => 'pol',
+                'validatorClass' => EthereumValidator::class,
+                'config' => []
+            ],
+            [
                 'name' => 'Multi-collateral DAI',
                 'symbol' => 'dai',
                 'validatorClass' => EthereumValidator::class,
